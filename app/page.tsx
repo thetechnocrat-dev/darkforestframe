@@ -5,7 +5,7 @@ export async function generateMetadata() {
     title: "Dark Forest Frames",
     // provide a full URL to your /frames endpoint
     other: await fetchMetadata(
-      new URL("/frames", process.env.VERCEL_URL ? `https://{process.env.VERCEL_URL}` : "http://localhost:3000")
+      new URL("/frames", process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000")
     ),
   };
 }

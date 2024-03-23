@@ -48,6 +48,8 @@ const handleRequest = frames(async (ctx) => {
   const fid = Number(ctx.message?.castId?.fid || 1);
   console.log(ctx);
   console.log(`my fid is ${fid}`);
+  const appUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000"
+  console.log(appUrl);
 
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
 
