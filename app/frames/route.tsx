@@ -1,13 +1,5 @@
 /* eslint-disable react/jsx-key */
 import { createFrames, Button } from "frames.js/next";
-import {
-  FrameButton,
-  FrameContainer,
-  FrameImage,
-  FrameReducer,
-  getPreviousFrame,
-  useFramesReducer,
-} from "frames.js/next/server";
 
 const planetData = [
   // Example planet data
@@ -33,9 +25,6 @@ const handleRequest = frames(async (ctx) => {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
 
   if (pageIndex === 0) {
-    // Logic for the home frame
-    const homeImageUrl = `${baseUrl}/home.png`;
-
     return {
       image: (
         <div tw="relative flex flex-col justify-center items-center w-full h-full bg-black">
@@ -128,7 +117,7 @@ const handleRequest = frames(async (ctx) => {
       <div tw="flex flex-col">
         <img width={300} height={200} src={imageUrl} alt="Planet Image" />
         <div tw="flex">
-          This is {planetOwnerText} planet with uuid of {currentPlanet.uuid}. It's energy is {currentPlanet.energyLevel}.
+          This is {planetOwnerText} planet with uuid of {currentPlanet.uuid}. It has energy {currentPlanet.energyLevel}.
         </div>
       </div>
     ),
