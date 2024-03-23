@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@xmtp/frames-validator": "^0.5.2",
     "frames.js": "^0.9.3",
     "next": "14.1.4",
     "react": "^18",

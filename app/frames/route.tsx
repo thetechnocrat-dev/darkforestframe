@@ -1,5 +1,9 @@
 /* eslint-disable react/jsx-key */
+// yo its a hackathon, we're not gonna be perfect
+// @ts-nocheck
 import { createFrames, Button } from "frames.js/next";
+import { farcasterHubContext, openframes } from "frames.js/middleware";
+import { getXmtpFrameMessage, isXmtpFrameActionPayload } from "frames.js/xmtp";
 
 const planetData = [
   // Example planet data
@@ -9,12 +13,35 @@ const planetData = [
   // Add more planets as needed
 ];
 
-export const frames = createFrames({
+const frames = createFrames({
   basePath: "/frames",
   initialState: {
     pageIndex: 0,
   },
+  middleware: [
+    farcasterHubContext({
+      hubHttpUrl: process.env.farcasterhubUrl || "http://localhost:3010/",
+    }),
+    openframes({
+      clientProtocol: {
+        id: "xmtp",
+        version: "2024-02-09",
+      },
+      handler: {
+        isValidPayload: (body: JSON) => isXmtpFrameActionPayload(body),
+        getFrameMessage: async (body: JSON) => {
+          if (!isXmtpFrameActionPayload(body)) {
+            return undefined;
+          }
+          const result = await getXmtpFrameMessage(body);
+ 
+          return { ...result };
+        },
+      },
+    }),
+  ],
 });
+
 
 const handleRequest = frames(async (ctx) => {
   const pageIndex = Number(ctx.searchParams.pageIndex || 0);
