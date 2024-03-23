@@ -1,5 +1,13 @@
 /* eslint-disable react/jsx-key */
 import { createFrames, Button } from "frames.js/next";
+import {
+  FrameButton,
+  FrameContainer,
+  FrameImage,
+  FrameReducer,
+  getPreviousFrame,
+  useFramesReducer,
+} from "frames.js/next/server";
 
 const planetData = [
   // Example planet data
@@ -30,13 +38,45 @@ const handleRequest = frames(async (ctx) => {
 
     return {
       image: (
-        <div tw="flex flex-col">
-          <img width={300} height={200} src={homeImageUrl} alt="Home" />
-          <div tw="flex">
-            Dark Forest Frames: Hide World
+        <div tw="relative flex flex-col justify-center items-center w-full h-full bg-black">
+          {/* Centered text */}
+          <svg viewBox="0 0 382 200" tw="w-full h-full">
+            {/* Red border */}
+            {/* <rect x="0" y="0" width="382" height="200" fill="none" stroke="red" stroke-width="4" /> */}
+            {/* Stars */}
+            {Array.from({ length: 50 }).map((_, index) => (
+              <circle
+                key={index}
+                cx={Math.random() * 382} // Random position in x within the viewBox
+                cy={Math.random() * 200} // Random position in y within the viewBox
+                r={Math.random() * 2 + 1} // Random radius between 1 and 3
+                fill="white"
+              />
+            ))}
+            {/* Trees with varied spacing and size */}
+            {Array.from({ length: 10 }).map((_, index) => {
+              // Randomize the tree size and position
+              let baseX = Math.random() * (382 - 20);
+              let treeHeight = 20 + Math.random() * 30; // Base height between 20 and 50
+              let treeWidth = treeHeight / 2;
+              return (
+                <polygon
+                  key={index}
+                  points={`${baseX},${200} ${baseX + treeWidth},${200 - treeHeight} ${baseX + 2 * treeWidth},${200}`}
+                  fill="darkgreen"
+                />
+              );
+            })}
+          </svg>
+          <div tw="absolute inset-0 flex justify-center items-center text-3xl text-gray-500">
+            Dark Forest Frames
           </div>
         </div>
       ),
+      imageOptions: {
+          width: 382, // Width maintaining the aspect ratio 1.91:1
+          height: 200, // Height maintaining the aspect ratio 1.91:1
+      },
       buttons: [
         <Button action="post" target={{ query: { pageIndex: 0 } }}>Search</Button>,
         <Button action="post" target={{ query: { pageIndex: (pageIndex + 1) } }}>→</Button>
