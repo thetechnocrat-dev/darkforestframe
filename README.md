@@ -26,7 +26,7 @@ Equation 3)
 E' = E - E"
 ```
 `E'` is the new energy of the planet after sending energy.
-`E` is the current enery of the planet.
+`E` is the current energy of the planet.
 `E"` is the energy sent.
 
 Equation 4)
