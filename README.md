@@ -11,7 +11,7 @@ Rules:
 5) At the end of the game the player with the most energy summed across their 3 planets wins (equation 5).
 6) All of a player's planets start out hidden from other players.
 7) At anypoint in the game a player can choose to reveal all of their planets for rest of the game.
-8) Sending energy to a planet you do not own will reveal that planet.
+8) A planet is also revealed when it sends energy to a planet that is not yours.
 
 Equation 1)
 ```
