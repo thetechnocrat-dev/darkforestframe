@@ -3,6 +3,8 @@
 “If I destroy you, what business is it of yours?”
 ― Liu Cixin, The Dark Forest
 
+[Inspire by Dark Forest zKSNARK Space Warefare](https://blog.zkga.me/announcing-darkforest)
+
 Ruleset
 1) Every player starts the game with three planets hidden from all other players.
 2) Planets build up energy over time (equation 1).
