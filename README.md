@@ -47,3 +47,6 @@ P = E1 + E2 + E3
 ```
 `P` is the number of points and `E1` is the energy from planet 1 and so on.
 
+"In the cosmos, no matter how fast you are, someone will be faster; no matter how slow you are, someone will be slower."
+- Liu Cixin, Death's End
+
