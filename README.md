@@ -20,6 +20,7 @@ E = ln(t + 1)
 * `ln` is the natural log.
 
 Equation 2)
+
 a)
 ```
 B = (1 / j) * integral_0_to_j(ln(t + 1))
