@@ -50,9 +50,8 @@ P = E1 + E2 + E3
 ```
 * `P` is the number of points and `E1` is the energy from planet 1 and so on.
 
-"In the cosmos, no matter how fast you are, someone will be faster; no matter how slow you are, someone will be slower."
-- Liu Cixin, Death's End
-
 <img width="572" alt="Screenshot 2024-03-23 at 9 24 46 AM" src="https://github.com/thetechnocrat-dev/darkforestframe/assets/9427089/f318b3e5-e126-46e4-bfa7-4fb4d642fefa">
 
+"In the cosmos, no matter how fast you are, someone will be faster; no matter how slow you are, someone will be slower."
+- Liu Cixin, Death's End
 
