@@ -6,7 +6,7 @@
 Rules:
 1) Every player starts the game with three planets (equation 1).
 2) Planets build up energy over time (equation 2).
-3) Energy can be sent to other planets (equation 3).
+3) A player can send some or all of a planets energy to another planet (equation 3).
 4) Depending on the energy of the receiving planet it will either gain or lose energy (equation 4).
 5) At the end of the game the player with the most energy summed across their 3 planets wins (equation 5).
 6) All of a player's planets start out hidden from other players.
@@ -22,15 +22,28 @@ Equation 2)
 ```
 E = log(e)
 ```
-E is energy and e is number of epochs since game start
+`E` is energy and e is number of epochs since game start.
 
 Equation 3)
-A planet recieving energy from another planet gains the energy if 
 ```
-
+E" = E - S 
 ```
+`E"` is the new energy of the planet after sending energy.
+`E` is the current enery of the planet.
+`S` is the energy sent.
 
 Equation 4)
-
+```
+E" = E + or - S
+B = (1 / (0 - j)) * integral_0_to_j(log(e))
+```
+A planet with energy `E` recieving energy `S` from another planet gains the energy received if its energy is less than `B` and loses energy if it is more than `B`.
+`j` is the current epoch.
+`E"` is the new energy.
 
 Equation 5)
+```
+P = E1 + E2 + E3
+```
+`P` is the number of points and `E1` is the energy from planet 1 and so on.
+
