@@ -4,8 +4,8 @@
 ― Liu Cixin, The Dark Forest
 
 Rules:
-1) Every player starts the game with three planets (equation 1).
-2) Planets build up energy over time (equation 2).
+1) Every player starts the game with three planets.
+2) Planets build up energy over time (equation 1).
 3) A player can send some or all of a planets energy to another planet (equation 3).
 4) Depending on the energy of the receiving planet it will either gain or lose energy (equation 4).
 5) At the end of the game the player with the most energy summed across their 3 planets wins (equation 5).
@@ -13,33 +13,30 @@ Rules:
 7) At anypoint in the game a player can choose to reveal all of their planets for rest of the game.
 8) A planet is also revealed when it sends energy to a planet that is not yours.
 
-Equation 1)
+Equation 1) 
 ```
-3
+E = ln(t + 1)
 ```
-
-Equation 2) 
-```
-E = log(e)
-```
-`E` is energy and e is number of epochs since game start.
+`E` is the current energy of the planet.
+`t` is the number of epochs since game start.
+`ln` is the natural log.
 
 Equation 3)
 ```
-E" = E - S 
+E' = E - E"
 ```
-`E"` is the new energy of the planet after sending energy.
+`E'` is the new energy of the planet after sending energy.
 `E` is the current enery of the planet.
-`S` is the energy sent.
+`E"` is the energy sent.
 
 Equation 4)
 ```
-E" = E + or - S
-B = (1 / (0 - j)) * integral_0_to_j(log(e))
+E' = E (+ or -) E"
+B = (1 / j) * integral_0_to_j(ln(t + 1))
 ```
-A planet with energy `E` recieving energy `S` from another planet gains the energy received if its energy is less than `B` and loses energy if it is more than `B`.
-`j` is the current epoch.
-`E"` is the new energy.
+A planet with energy `E` recieving energy `E"` from another planet gains the energy received if its energy is less than boundary `B` and loses energy if it is more than `B`.
+`t` is the current epoch.
+`E'` is the new energy.
 
 Equation 5)
 ```
