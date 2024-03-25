@@ -39,7 +39,7 @@ R = (1 / j) * integral_0_to_j(ln(t + 1))
 
 b) 
 ```
-E_1' = E_1 * σ (E_1 − B)
+E_1' = E_1 * σ (E_1 − R)
 ```
 * `E_1'` is the new energy of the planet after sending energy.
 * `E_1` is the current energy of the planet sending energy.
@@ -51,12 +51,12 @@ E_1' = E_1 * σ (E_1 − B)
 
 c) 
 ```
-E_2' = E_2 * σ (E_2 − B)
+E_2' = E_2 * σ (E_2 − R)
 ```
 * `E_2'` is the new energy of the planet receiving the energy.
 * `E_2` is the current energy of the planet receiving energy.
 * `σ` is the sigmoid function.
-* `B` is the the threshold equation.
+* `R` is the the threshold equation.
 
 <img width="566" alt="Screenshot 2024-03-24 at 11 44 06 AM" src="https://github.com/thetechnocrat-dev/darkforestframe/assets/9427089/47e48f5b-9098-4e50-a576-1d5226caa9aa">
 
