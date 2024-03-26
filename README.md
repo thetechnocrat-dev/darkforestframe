@@ -8,7 +8,7 @@
 Ruleset
 1) Every player starts the game with three planets hidden from all other players.
 2) Planets build up energy over time (equation 1).
-3) At anypoint in the game a player can choose to reveal all of their planets for rest of the game.
+3) At anypoint in the game a player can choose to reveal one or more of their planets for rest of the game.
 4) A player can send energy from a planet they own to their other planets or to any other player's revealed planets (equation 2).
 5) A planet is also revealed for rest of the game when it sends energy to a planet that is not yours.
 6) At the end of the game the player with the most energy summed across their 3 planets wins (equation 3).
